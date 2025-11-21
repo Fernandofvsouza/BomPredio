@@ -6,6 +6,7 @@
     --secondary-font: 'Science Gothic', sans-serif;
     --dark-blue: #002A5E;
     --light-gray: #f2f2f2;
+    --dark-gray: #d3d3d3;
     --black: #000000;
     --white: #FFFFFF;
     --goldenroad: #DAA520;
@@ -142,7 +143,7 @@ body{
     padding:2rem 0rem 0.5rem 0rem;
 }
 .title p{
-    color: var(--light-gray);
+    color: var(--dark-gray);
     font-size: 1rem;
     text-align: center;
     padding: 0 0 2rem 0;
@@ -210,7 +211,7 @@ body{
     margin-bottom: 1rem;
 }
 .btns-description button{
-    background-color: #d3d3d3;
+    background-color: var(--dark-gray);
     border: none;
     padding: 4px 8px;
     
