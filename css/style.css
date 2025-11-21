@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap');
+
+:root{
+    --primary-font:"Roboto", sans-serif;
+    --secondary-font: 'Science Gothic', sans-serif;
+    --dark-blue: #002A5E;
+    --light-gray: #f2f2f2;
+    --black: #000000;
+    --white: #FFFFFF;
+    --goldenroad: #DAA520;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+}
+
+body{
+    background-color: var(--light-gray);
+    height: 100vh;
+    width: 100vw;
+}
+
+.header-container{
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--dark-blue);
+}
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.logo i{
+    color: var(--goldenroad);
+}
+
+.logo span{
+    font-family: var(--secondary-font);
+    color: var(--goldenroad);
+}
+
+.navigation{
+    display: flex;
+    gap: 2rem;
+}
+
+.navigation a{
+    color: var(--white);
+    text-decoration: none;
+    font-weight:500;
+    font-size: 1.1rem;
+
+    transition: .3s ease-in-out;
+}
+.navigation a:hover{
+    color: var(--goldenroad);
+    font-size: 1.2rem;
+}
+
+.user-actions{
+    display: flex;
+    gap: 1rem;
+}
+.user-actions .first-btn{
+    background-color: var(--goldenroad);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.user-actions .first-btn:hover{
+    background-color: transparent;
+    border: 2px solid var(--goldenroad);
+}
+.user-actions .first-link{
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: .3s ease-in-out;
+}
+
+.user-actions .first-link:hover{
+    color: var(--goldenroad);
+}
+
+.user-actions .second-btn{
+    background-color: transparent;
+    border: 2px solid var(--goldenroad);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.user-actions .second-btn:hover{
+    background-color: var(--goldenroad);
+    border: none;
+}
+.user-actions .second-link{
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: .3s ease-in-out;
+}
+.user-actions .second-link:hover{
+    color: var(--dark-blue);
+}
+
+.main-content{
+    width: 100%;
+    height: calc(100vh - 5rem);
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-blue);
+    margin: 2rem 0.6rem;
+    color: var(--white);
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.title h1{
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-align: center;
+    padding:2rem 0rem 0.5rem 0rem;
+}
+.title p{
+    color: var(--light-gray);
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 0 2rem 0;
+    font-weight: 400;
+}
+
+.title button{
+    background-color: var(--goldenroad);
+    border: none;
+    padding: 10px 20px;
+    margin: 0 auto;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    transition: .3s ease-in-out;
+}
+.title button:hover{
+    background-color: transparent;
+    border: 2px solid var(--goldenroad);
+}
+.title button a{
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: .3s ease-in-out;
+}
+.title button a:hover{
+    color: var(--goldenroad)
+}
+
+.admin{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    margin: 2rem 2rem; 
+    gap: 1.4rem;
+}
+.admin h1{
+    font-size: 1.8rem;
+    
+    color: var(--dark-blue);
+    text-transform: uppercase;
+}
+.card-inside{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    border: 2px solid var(--goldenroad);
+    background-color: var(--white);
+    padding: 1.2rem 0 1.2rem .8rem;
+    border-radius: 10px;
+}
+
+.card-inside h2{
+    font-size: 1.4rem;
+    color: var(--dark-blue);
+    text-transform: uppercase;
+}
+
+.btns-description{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.btns-description button{
+    background-color: #d3d3d3;
+    border: none;
+    padding: 4px 8px;
+    
+}
+.btns-description button a{
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 500;
+    font-size: .6rem;
+}
+
+.btns-principal{
+    display: flex;
+    gap: 1.4rem;
+}
+
+.btns-principal button{
+    background-color: var(--goldenroad);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.btns-principal button:hover{
+    background-color: transparent;
+    border: 2px solid var(--goldenroad);
+}
+.btns-principal button a{
+    text-decoration: none;
+    color: var(--dark-blue);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: .3s ease-in-out;
+}
+.btns-principal button a:hover{
+    color: var(--goldenroad)
+}
