@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap');
+
+:root{
+    --primary-font:"Roboto", sans-serif;
+    --secondary-font: 'Science Gothic', sans-serif;
+    --dark-blue: #002A5E;
+    --light-gray: #f2f2f2;
+    --dark-gray: #d3d3d3;
+    --black: #000000;
+    --white: #FFFFFF;
+    --goldenroad: #DAA520;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    min-height: 100vh;
+
+}
+
+.section {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-section {
+    background-color: var(--dark-blue);
+    border-right: 1px solid #dee2e6;
+}
+
+.register-section {
+    background: var(--light-gray)
+}
+
+.form-container {
+    width: 100%;
+    max-width: 350px;
+}
+
+h2 {
+    color: var(--goldenroad);
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+h3{
+    color: var(--dark-blue);
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.form-container p {
+    color: #6c757d;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: var(--goldenroad);
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--goldenroad);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group input::placeholder {
+    color: #adb5bd;
+}
+
+.checkbox-group {
+    flex-direction: row !important;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+}
+
+.checkbox-group label {
+    margin: 0;
+    font-size: 13px;
+    color: #6c757d;
+    cursor: pointer;
+}
+
+.btn {
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background-color: var(--goldenroad);
+    color: var(--dark-blue);
+}
+
+.btn-primary:hover {
+    background: var(--dark-blue);
+    color: var(--goldenroad);
+    border: 1px solid var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-secondary {
+    background: var(--dark-blue);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #DAA520;
+    transform: translateY(-2px);
+    color: var(--dark-blue);
+}
+
+.form-links {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.forgot-password,
+.terms-link,
+.privacy-link {
+    color: var(--goldenroad);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover,
+.terms-link:hover,
+.privacy-link:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+
+
+/* Animações */
+.form-container {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-group input:invalid:not(:placeholder-shown) {
+    border-color: #dc3545;
+}
+
+.form-group input:valid:not(:placeholder-shown) {
+    border-color: #28a745;
+}
