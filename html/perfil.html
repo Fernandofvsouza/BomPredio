@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Admin Premium Lisboa - Perfil | Bom Prédio</title>
+    <style>
+        .profile-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .profile-header {
+            background-color: var(--white);
+            border: 2px solid var(--goldenroad);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .profile-title h1 {
+            color: var(--dark-blue);
+            font-size: 2.5rem;
+            text-transform: uppercase;
+        }
+        
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.2rem;
+            color: var(--goldenroad);
+        }
+        
+        .profile-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+        }
+        
+        .info-item i {
+            color: var(--goldenroad);
+            font-size: 1.2rem;
+        }
+        
+        .section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section h2 {
+            color: var(--dark-blue);
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--goldenroad);
+            padding-bottom: 0.5rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .service-card {
+            background-color: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--goldenroad);
+        }
+        
+        .service-card h3 {
+            color: var(--dark-blue);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+        
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .testimonial {
+            background-color: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--dark-gray);
+        }
+        
+        .testimonial-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--dark-blue);
+        }
+        
+        .testimonial-rating {
+            color: var(--goldenroad);
+        }
+        
+        .contact-actions {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-btn {
+            background-color: var(--goldenroad);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--white);
+            transition: .3s ease-in-out;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .contact-btn:hover {
+            background-color: transparent;
+            border: 2px solid var(--goldenroad);
+            color: var(--goldenroad);
+        }
+        
+        .contact-btn.secondary {
+            background-color: transparent;
+            border: 2px solid var(--dark-blue);
+            color: var(--dark-blue);
+        }
+        
+        .contact-btn.secondary:hover {
+            background-color: var(--dark-blue);
+            color: var(--white);
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--dark-blue);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: .3s ease-in-out;
+        }
+        
+        .back-btn:hover {
+            color: var(--goldenroad);
+        }
+        
+        @media (max-width: 768px) {
+            .profile-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .contact-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header-container">
+        <div class="logo">
+            <i class="fa-regular fa-building"></i>
+            <span>Bom Prédio</span>
+        </div>
+        <nav class="navigation">
+            <a href="#">Como funciona</a>
+            <a href="#">Sobre nós</a>
+            <a href="#">Comparar</a>
+            <a href="#">Marketplace</a>
+        </nav>
+        <div class="user-actions">
+            <Button class="first-btn"><a href="/html/entrar.html" class="first-link">Entrar</a></Button>
+            <button class="second-btn"><a href="/html/entrar.html" class="second-link">Cadastrar</a></button>
+        </div>
+    </header>
+
+    <main class="profile-container">
+        <a href="/html/index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            Voltar ao Marketplace
+        </a>
+
+        <div class="profile-header">
+            <div class="profile-title">
+                <h1>Admin Premium Lisboa</h1>
+                <div class="rating">
+                    <span>4.8</span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            
+            <div class="profile-info">
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <strong>Localização:</strong><br>
+                        Lisboa, Portugal
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-euro-sign"></i>
+                    <div>
+                        <strong>Preço Médio:</strong><br>
+                        €1.200/mês
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-building"></i>
+                    <div>
+                        <strong>Condomínios Geridos:</strong><br>
+                        45 propriedades
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <div>
+                        <strong>Anos de Experiência:</strong><br>
+                        12 anos no mercado
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Sobre a Administradora</h2>
+            <p>A Admin Premium Lisboa é uma empresa especializada na gestão de condomínios em Lisboa e região metropolitana. Com mais de 12 anos de experiência, oferecemos serviços completos de administração predial, sempre com foco na transparência, eficiência e satisfação dos condôminos.</p>
+            <p>Nossa equipe é formada por profissionais qualificados e certificados, garantindo a melhor gestão para seu condomínio. Utilizamos as mais modernas tecnologias para facilitar a comunicação e o acompanhamento das atividades administrativas.</p>
+        </div>
+
+        <div class="section">
+            <h2>Serviços Oferecidos</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3><i class="fa-solid fa-broom"></i> Limpeza e Manutenção</h3>
+                    <p>Serviços completos de limpeza das áreas comuns, manutenção preventiva e corretiva de equipamentos e instalações.</p>
+                </div>
+                <div class="service-card">
+                    <h3><i class="fa-solid fa-calculator"></i> Gestão Financeira</h3>
+                    <p>Controle de receitas e despesas, emissão de recibos, gestão de inadimplência e relatórios financeiros detalhados.</p>
+                </div>
+                <div class="service-card">
+                    <h3><i class="fa-solid fa-gavel"></i> Assessoria Jurídica</h3>
+                    <p>Suporte jurídico especializado em direito condominial, elaboração de regulamentos e resolução de conflitos.</p>
+                </div>
+                <div class="service-card">
+                    <h3><i class="fa-solid fa-shield-alt"></i> Segurança</h3>
+                    <p>Implementação de sistemas de segurança, controle de acesso e monitoramento das áreas comuns.</p>
+                </div>
+                <div class="service-card">
+                    <h3><i class="fa-solid fa-laptop"></i> Portal Online</h3>
+                    <p>Plataforma digital para condôminos acessarem informações, boletos, atas e se comunicarem com a administração.</p>
+                </div>
+                <div class="service-card">
+                    <h3><i class="fa-solid fa-users"></i> Assembleias</h3>
+                    <p>Organização e condução de assembleias ordinárias e extraordinárias, com toda a documentação necessária.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Avaliações dos Clientes</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <span class="testimonial-author">Maria Silva - Síndica</span>
+                        <span class="testimonial-rating">★★★★★</span>
+                    </div>
+                    <p>"Excelente administradora! Transparência total nos gastos e comunicação sempre clara. Recomendo a todos os condomínios."</p>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <span class="testimonial-author">João Santos - Condômino</span>
+                        <span class="testimonial-rating">★★★★★</span>
+                    </div>
+                    <p>"Desde que contratamos a Admin Premium, nosso condomínio ficou muito mais organizado. O portal online é fantástico!"</p>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <span class="testimonial-author">Ana Costa - Síndica</span>
+                        <span class="testimonial-rating">★★★★☆</span>
+                    </div>
+                    <p>"Ótimo atendimento e serviços de qualidade. A única observação é que às vezes demora um pouco para responder e-mails."</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Informações de Contato</h2>
+            <div class="profile-info">
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <strong>Telefone:</strong><br>
+                        +351 21 123 4567
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <strong>E-mail:</strong><br>
+                        contato@adminpremiumlisboa.pt
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Endereço:</strong><br>
+                        Rua das Flores, 123, Lisboa
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-globe"></i>
+                    <div>
+                        <strong>Website:</strong><br>
+                        www.adminpremiumlisboa.pt
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-actions">
+                <a href="mailto:contato@adminpremiumlisboa.pt" class="contact-btn">
+                    <i class="fa-solid fa-envelope"></i> Enviar E-mail
+                </a>
+                <a href="tel:+351211234567" class="contact-btn secondary">
+                    <i class="fa-solid fa-phone"></i> Ligar Agora
+                </a>
+                <a href="#" class="contact-btn secondary">
+                    <i class="fa-solid fa-calendar"></i> Agendar Reunião
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>Sobre Bom Prédio</h2>
+                <p>Bom Prédio é um marketplace dedicado a conectar condomínios com as melhores administradoras, garantindo transparência e qualidade nos serviços oferecidos.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Links Rápidos</h2>
+                <ul>
+                    <li><a href="#">Como funciona</a></li>
+                    <li><a href="#">Sobre nós</a></li>
+                    <li><a href="/html/entrar.html">Entrar</a></li>
+                    <li><a href="/html/entrar.html">Cadastrar</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contato</h2>
+                <p>Email: bompredio@outlook.com</p>
+                <p>Telefone: +351 925 955 504</p>
+            </div>
+        </div>
+    </footer>
+    <script src="/javascript/perfil.js"></script>
+</body>
+</html>

@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Bom Prédio - Marketplace</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/avaliar.css">
+    <title>Bom Prédio - Comparar</title>
 </head>
 <body>
     <header class="header-container">
@@ -24,47 +25,49 @@
             <button class="second-btn"><a href="/html/entrar.html" class="second-link">Cadastrar</a></button>
         </div>
     </header>
+    
     <main class="main-content">
-        <section class="title">
-            <h1>Encontre a melhor administradora</h1>
-            <p>Transparencia, avaliações reais e preços competitivos</p>
-            <button><a href="/html/avaliar.html">Avaliar meu condomínio</a></button>
-        </section>
-        <section class="admin">
-            <h1>administradoras</h1>
-            <div class="card">
-                <div class="card-inside">
-                    <div class="card-title">
-                        <h2>Admin Premium Lisboa</h2>
-                        <span>Lisboa - €1200 - &#11088;4.8</span>
-                    </div>
-                    <div class="btns-description">
-                        <button>Limpeza</button>
-                        <button>Manutenção</button>
-                    </div>
-                    <div class="btns-principal">
-                        <button><a href="/html/perfil.html">Ver perfil</a></button>
-                        <button><a href="#">Contactar</a></button>
-                    </div>
-                </div>
-                <div class="card-inside">
-                    <div class="card-title">
-                        <h2>Gestão Total</h2>
-                        <span>Porto - €980 - &#11088;4.5</span>
-                    </div>
-                    <div class="btns-description">
-                        <button>ERP</button>
-                        <button>Contabilidade</button>
-                    </div>
-                    <div class="btns-principal">
-                        <button><a href="/html/perfil.html">Ver perfil</a></button>
-                        <button><a href="#">Contactar</a></button>
-                    </div>
-                </div>
+        <section class="compare-form">
+            <div class="form-header">
+                <button class="back-btn" onclick="window.location.href='index.html'">
+                    <i class="fas fa-arrow-left"></i>
+                    Voltar
+                </button>
+                <h1>Comparar administradores</h1>
             </div>
+            <p>Antes de comparar, conte-nos sobre o seu condomínio:</p>
+            
+            <form class="comparison-form">
+                <div class="form-group">
+                    <label for="condo-name">Nome do condomínio</label>
+                    <input type="text" id="condo-name" name="condo-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="city">Cidade</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="fractions">Número de frações</label>
+                    <input type="number" id="fractions" name="fractions" required>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="parking" name="parking">
+                    <label for="parking">Tem estacionamento?</label>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email para contacto</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <button type="submit" class="submit-btn">Enviar e comparar</button>
+            </form>
         </section>
-
     </main>
+    
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section about">
@@ -82,12 +85,10 @@
             </div>
             <div class="footer-section contact">
                 <h2>Contato</h2>
-                <p>Email:bompredio@outlook.com</p>
+                <p>Email: bompredio@outlook.com</p>
                 <p>Telefone: +351 925 955 504</p>
             </div>
         </div>
     </footer>
-    
-    <script src="/javascript/perfil.js"></script>
 </body>
 </html>

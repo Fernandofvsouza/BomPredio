@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/entrar.css">
-    <title>BomPredio - Entrar ou Registrar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/entrar.css">
+    <title>Entrar - Bom Prédio</title>
 </head>
 <body>
     <div class="container">
@@ -12,17 +13,17 @@
         <div class="section login-section">
             <div class="form-container">
                 <h2>Entrar</h2>
-                <p>Já tem uma conta? Faça login</p>
+                <p>Bem-vindo de volta! Entre na sua conta.</p>
                 
                 <form class="form" id="loginForm">
                     <div class="form-group">
                         <label for="loginEmail">Email</label>
-                        <input type="email" id="loginEmail" name="email" required placeholder="Digite seu email">
+                        <input type="email" id="loginEmail" name="email" placeholder="Digite seu email" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="loginPassword">Senha</label>
-                        <input type="password" id="loginPassword" name="password" required placeholder="Digite sua senha">
+                        <input type="password" id="loginPassword" name="password" placeholder="Digite sua senha" required>
                     </div>
                     
                     <div class="form-group checkbox-group">
@@ -33,71 +34,121 @@
                     <button type="submit" class="btn btn-primary">Entrar</button>
                     
                     <div class="form-links">
-                        <a href="#" class="forgot-password">Esqueceu sua senha?</a>
+                        <a href="#" class="forgot-password">Esqueceu a senha?</a>
                     </div>
                 </form>
             </div>
         </div>
         
-        <!-- Seção de Registro -->
+        <!-- Seção de Cadastro -->
         <div class="section register-section">
             <div class="form-container">
-                <h3>Registrar</h3>
-                <p>Crie sua conta no BomPredio</p>
+                <h3>Cadastrar</h3>
+                <p>Crie sua conta e encontre a melhor administradora.</p>
                 
                 <form class="form" id="registerForm">
                     <div class="form-group">
-                        <label for="registerName">Nome completo</label>
-                        <input type="text" id="registerName" name="name" required placeholder="Digite seu nome completo">
+                        <label for="registerName">Nome Completo</label>
+                        <input type="text" id="registerName" name="name" placeholder="Digite seu nome completo" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="registerEmail">Email</label>
-                        <input type="email" id="registerEmail" name="email" required placeholder="Digite seu email">
+                        <input type="email" id="registerEmail" name="email" placeholder="Digite seu email" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="registerPhone">Telefone</label>
-                        <input type="tel" id="registerPhone" name="phone" required placeholder="(351) 99999-9999">
+                        <input type="tel" id="registerPhone" name="phone" placeholder="Digite seu telefone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="userType">Tipo de Usuário</label>
+                        <select id="userType" name="userType" required>
+                            <option value="">Selecione</option>
+                            <option value="proprietario">Proprietário de Condomínio</option>
+                            <option value="administradora">Administradora</option>
+                            <option value="morador">Morador</option>
+                        </select>
                     </div>
                     
                     <div class="form-group">
                         <label for="registerPassword">Senha</label>
-                        <input type="password" id="registerPassword" name="password" required placeholder="Digite sua senha">
+                        <input type="password" id="registerPassword" name="password" placeholder="Digite sua senha" required minlength="6">
                     </div>
                     
                     <div class="form-group">
-                        <label for="confirmPassword">Confirmar senha</label>
-                        <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirme sua senha">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="userType">Tipo de usuário</label>
-                        <select id="userType" name="userType" required>
-                            <option value="">Selecione uma opção</option>
-                            <option value="inquilino">Inquilino</option>
-                            <option value="proprietario">Proprietário</option>
-                            <option value="corretor">Corretor</option>
-                        </select>
+                        <label for="confirmPassword">Confirmar Senha</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirme sua senha" required minlength="6">
                     </div>
                     
                     <div class="form-group checkbox-group">
-                        <input type="checkbox" id="acceptTerms" name="acceptTerms" required>
-                        <label for="acceptTerms">
-                            Aceito os <a href="#" class="terms-link">termos de uso</a> e 
-                            <a href="#" class="privacy-link">política de privacidade</a>
+                        <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                        <label for="agreeTerms">
+                            Concordo com os 
+                            <a href="#" class="terms-link">Termos de Uso</a> 
+                            e 
+                            <a href="#" class="privacy-link">Política de Privacidade</a>
                         </label>
                     </div>
                     
-                    <div class="form-group checkbox-group">
-                        <input type="checkbox" id="newsletter" name="newsletter">
-                        <label for="newsletter">Quero receber novidades por email</label>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-secondary">Criar conta</button>
+                    <button type="submit" class="btn btn-secondary">Cadastrar</button>
                 </form>
             </div>
         </div>
     </div>
+
+    <script>
+        // Validação do formulário de cadastro
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const password = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                alert('As senhas não coincidem. Tente novamente.');
+                return;
+            }
+            
+            if (password.length < 6) {
+                alert('A senha deve ter pelo menos 6 caracteres.');
+                return;
+            }
+            
+            alert('Cadastro realizado com sucesso! Redirecionando...');
+            // Aqui você pode redirecionar para a página principal ou fazer a requisição para o servidor
+            window.location.href = '/html/index.html';
+        });
+        
+        // Validação do formulário de login
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            if (!email || !password) {
+                alert('Por favor, preencha todos os campos.');
+                return;
+            }
+            
+            // Simulação de login - em um projeto real, aqui seria feita a autenticação
+            alert('Login realizado com sucesso! Redirecionando...');
+            window.location.href = '/html/index.html';
+        });
+        
+        // Formatação do telefone
+        document.getElementById('registerPhone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length <= 11) {
+                value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '($1) $2-$3-$4');
+                if (value.length < 15) {
+                    value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+                }
+            }
+            e.target.value = value;
+        });
+    </script>
 </body>
 </html>

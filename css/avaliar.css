@@ -1,0 +1,139 @@
+/* Estilos para a página de comparação */
+.compare-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.back-btn {
+    background-color: transparent;
+    border: 2px solid var(--dark-gray);
+    color: var(--dark-blue);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.back-btn:hover {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    transform: translateX(-2px);
+}
+
+.back-btn i {
+    font-size: 0.8rem;
+}
+
+.compare-form h1 {
+    color: var(--dark-blue);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.compare-form > p {
+    color: var(--black);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.comparison-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: var(--black);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="email"] {
+    padding: 0.75rem;
+    border: 2px solid var(--dark-gray);
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: var(--white);
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--goldenroad);
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--goldenroad);
+}
+
+.checkbox-group label {
+    margin: 0;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.submit-btn {
+    background-color: var(--goldenroad);
+    color: var(--dark-blue);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    align-self: flex-start;
+}
+
+.submit-btn:hover {
+    background-color: transparent;
+    border: 2px solid var(--goldenroad);
+    color: var(--goldenroad);
+}
+
+@media (max-width: 768px) {
+    .compare-form {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .compare-form h1 {
+        font-size: 1.5rem;
+    }
+}
